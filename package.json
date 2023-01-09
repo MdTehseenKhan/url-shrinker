@@ -6,7 +6,7 @@
   "license": "ISC",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "node index.js"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
