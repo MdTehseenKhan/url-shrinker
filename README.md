@@ -7,7 +7,7 @@ Here is the demonstration:
 - Paste link: https://instagram.com/md_tehseen_khan
 - Click on **Shrink URL**
 - Let's say `63iy0_9w9` is the generated short version of URL.
-- Your Shrinked link: https://shrinken.vercel.app/63iy0_9w9
+- Your Shrinked link: https://shrinker.vercel.app/63iy0_9w9
 - Congratulations 🎉
 
 # Technology used:
