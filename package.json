@@ -5,6 +5,9 @@
   "main": "index.js",
   "license": "ISC",
   "type": "module",
+	"engines": {
+		"node": "18.x"
+	}
   "scripts": {
     "dev": "nodemon index.js"
   },
