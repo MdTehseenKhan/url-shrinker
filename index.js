@@ -12,8 +12,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 
 app.get('/', async (req, res) => {
-  const shortURLs = await ShortURL.find();
-	res.render('index', { shortURLs });
+	try {
+    const shortURLs = await ShortURL.find();
+	  res.render('index', { shortURLs });
+	} catch(err) {
+		res.status(404).send(err.message)
+	}
 });
 
 app.post('/shorturls', async (req, res) => {
