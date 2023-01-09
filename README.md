@@ -5,9 +5,9 @@ This is a simple and straightforward app that allows you to generate a short ver
 Here is the demonstration:
 
 - Paste link: https://instagram.com/md_tehseen_khan
-- Click "Shrink URL"
+- Click on **Shrink URL**
 - Let's say `63iy0_9w9` is the generated short version of URL.
-- Go to: https://short.vercel.app/63iy0_9w9
+- Your Shrinked link: https://shrinken.vercel.app/63iy0_9w9
 - Congratulations 🎉
 
 # Technology used:
