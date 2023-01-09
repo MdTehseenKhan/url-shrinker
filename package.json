@@ -6,7 +6,7 @@
   "license": "ISC",
   "type": "module",
 	"engines": {
-		"node": "14.x",
+		"node": "14.x"
 	},
   "scripts": {
     "dev": "nodemon index.js"
