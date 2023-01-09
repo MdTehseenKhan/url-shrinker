@@ -9,10 +9,7 @@ const __dirname = new URL('.', import.meta.url).pathname;
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
-
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
-
 
 app.get('/', async (req, res) => {
   const shortURLs = await ShortURL.find()
@@ -20,15 +17,18 @@ app.get('/', async (req, res) => {
 })
 
 app.post('/shorturls', async (req, res) => {
-	const { fullURL } = req?.body
-  await ShortURL.create({ fullURL: fullURL.trim() })
-	res.redirect('/')
+  try {
+    await ShortURL.create({ fullURL: req?.body?.fullURL.trim() })
+    res.redirect('/')
+	} catch(err) {
+		res.status(404).send(err.message)
+	}
 })
 
 app.get('/:shortURL', async (req, res) => {
   const { shortURL } = req?.params
 	const shortURLs = await ShortURL.findOne({ shortURL })
-	if(!shortURLs) return res.sendStatus(404)
+	if(!shortURLs) return res.status(404).send("404 Not Found")
 
 	shortURLs.clicks++
 	await shortURLs.save()
