@@ -4,7 +4,7 @@ import ShortURL from "./models/ShortURL.js"
 import "./db.js"
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = 9000
 const __dirname = new URL('.', import.meta.url).pathname;
 
 app.set('view engine', 'ejs')
