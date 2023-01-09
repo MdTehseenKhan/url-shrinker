@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--<link 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+			rel="stylesheet" 
+		>-->
+		<link href="../favicon.png" rel="favicon" type="image/png"/>
+		<title>URL Shortener</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<section class="container pt-4">
+			<h1 class="text-center my-2">URL Shortener</h1>
+			<form 
+				action="/shorturls"
+				method="POST"
+				class="form-inline my-2"
+			>
+				<input 
+					type="url" 
+					placeholder="Enter URL here..."
+					name="fullURL"
+					class="form-control w-100 my-2"
+					required
+				/>
+				<button 
+					type="submit"
+					class="btn btn-primary w-100 my-2"
+				>
+					Shrink URL
+				</button>
+			</form>
+		
+			<table class="table table-hover table-striped table-responsive">
+				<thead>
+					<tr>
+						<th>Full URL</th>
+						<th>Short URL</th>
+						<th>Clicks</th>
+					</tr>
+				</thead>
+				<tbody class="table-group-divider">
+				  <% shortURLs?.reverse()?.forEach(({ fullURL, shortURL, clicks }) => { %>
+						<tr>
+							<td>
+								<a href="<%= fullURL %>" target="_blank" >
+									<%= fullURL %>
+								</a>
+							</td>
+							<td>
+								<a href="/<%= shortURL %>" target="_blank" >
+									<%= shortURL %>
+								</a>
+							</td>
+							<td>
+								<%= clicks %>
+							</td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</section>
+		<!--<script 
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+			defer
+		></script>
+		<script 
+			src="/js/bootstrap.bundle.min.js"
+			defer
+		></script>
+		<script 
+			src="/js/bootstrap.min.js"
+			defer
+		></script>-->
+	</body>
+</html>
