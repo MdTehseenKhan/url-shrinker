@@ -1,4 +1,4 @@
-# URL Shortener:
+# URL Shrinker:
 
 This is a simple and straightforward app that allows you to generate a short version of your long URL you just need to paste your URL on the given field and wufff! it's done. Now you can use this short version of the URL by simply using this site's link followed by the short URL.
 

@@ -1,17 +1,11 @@
-/*
 import express from "express";
 import { URL } from "url";
 import ShortURL from "./models/ShortURL.js";
 import "./db.js";
-*/
-const express = require("express");
-const { URL } = require("url");
-const ShortURL = require("./models/ShortURL.js");
-require("./db.js");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// const __dirname = new URL('.', import.meta.url).pathname;
+const __dirname = new URL('.', import.meta.url).pathname;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
