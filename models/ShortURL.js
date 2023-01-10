@@ -1,6 +1,8 @@
 
-import mongoose from "mongoose"
-import shortId from "shortid"
+/* import mongoose from "mongoose"
+import shortId from "shortid"*/
+const mongoose = require("mongoose")
+const shortId = require("shortid")
 const { Schema, model } = mongoose
 
 const ShortURLSchema = new Schema({
@@ -10,4 +12,4 @@ const ShortURLSchema = new Schema({
 })
 
 const ShortURL = mongoose.models.ShortURL || model('ShortURL', ShortURLSchema)
-export default ShortURL
+module.exports = ShortURL
