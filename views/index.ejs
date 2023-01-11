@@ -7,8 +7,8 @@
 		<title>URL Shrinker</title>
 		<link href="/css/bootstrap.min.css" rel="stylesheet" />
 	</head>
-	<body>
-		<section class="container mx-auto pt-4">
+	<body class="container">
+		<section class="pt-4">
 			<h1 class="text-center fw-bold">URL Shrinker</h1>
 			<form 
 				action="/shorturls"
@@ -30,7 +30,8 @@
 				</button>
 			</form>
 		</section>
-		<section class="container mx-auto overflow-auto">
+		
+		<section class="overflow-auto my-2">
 			<table class="table table-striped table-responsive">
 				<thead>
 					<tr>
@@ -60,5 +61,32 @@
 				</tbody>
 			</table>
 		</section>
+    <!--
+		<div class="my-2 w-100 d-flex justify-content-center">
+				<nav aria-label="Page navigation">
+					<ul class="pagination">
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Previous">
+								<span aria-hidden="true">Prev</span>
+							</a>
+						</li>
+						
+						<% [1, 2, 3].forEach((_, i) =>{ %>
+					  	<li class="page-item">
+								<a class="page-link" href="#">
+								  <%= i+1 %>
+							  </a>
+							</li>
+						<% }) %>
+						
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Next">
+								<span aria-hidden="true">Next</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+		</div>
+    -->
 	</body>
 </html>
